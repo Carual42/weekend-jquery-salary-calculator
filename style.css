@@ -5,28 +5,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-#content {
-    padding: 20px;
-}
-
 #input-fields {
     /* 20 px padding top and bottom */
     padding: 20px 0px; 
-}
-
-.right-align {
-    float:right;
-}
-
-input[type=text] {
-    width: 100%;
-    padding: 10px 10px;
-    margin: 8px 0;
-    box-sizing: border-box;
+    margin: 30px;
+    align-items: center;
 }
 
 table {
-    border-collapse: collapse;
+    border: solid;
+    border-color: maroon;
     width: 100%;
 }
 
@@ -34,10 +22,6 @@ th,
 td {
     text-align: left;
     padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2
 }
 
 th {
@@ -55,11 +39,10 @@ header {
 
 button {
     background-color: maroon;
-    border: none;
+    border: solid;
     color: white;
-    padding: 12px 32px;
+    padding: 12px 40px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
