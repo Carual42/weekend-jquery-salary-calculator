@@ -55,7 +55,7 @@ function salaryCalc(array) {
         sum += Number(array[i])
     }
     console.log(sum)
-    let monthlySum = $('#monthCost')
+    let monthlySum = $('#monthCost');
     monthlySum.empty();
     monthlySum.append (`
     <h3>
@@ -64,7 +64,7 @@ function salaryCalc(array) {
     `)
     if (sum > 20000){
         console.log('in if loop')
-        $('#monthCost').css('background-color', 'maroon')
+        monthlySum.css('background-color', 'maroon')
     }
 }
 // function to use deleteBtn to erase data
