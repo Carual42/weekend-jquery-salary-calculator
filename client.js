@@ -5,8 +5,10 @@ function readyNow() {
     console.log('ARE YOU READY?!?!?')
     $('#inputSubmit').on('click', storeData)
 }
+
 // array to hold salaries needed for calc total
 let salaryTotal = [];
+
 // function to take input data and append dom
 function storeData() {
     console.log('in store data')
@@ -17,23 +19,40 @@ function storeData() {
     let annualSalary = $('#annualSalary').val()
     //append to the dom with above info
     $('#salaryDisplay').append(`
+    <tr>
     <td>${firstName}</td>
-    `)
-    $('#salaryDisplay').append(`
     <td>${lastName}</td>
-    `)
-    $('#salaryDisplay').append(`
     <td>${ID}</td>
-    `)
-    $('#salaryDisplay').append(`
     <td>${title}</td>
-    `)
-    $('#salaryDisplay').append(`
     <td>${annualSalary}</td>
+    <td>
+        <button id="deleteBtn">Delete</button>
+    </td>
+    </tr>
     `)
+    $('#FirstName').val('')
+    $('#LastName').val('')
+    $('#ID').val('')
+    $('#title').val('')
+    $('#annualSalary').val('')
     // add salary to salaryTotal
-    salaryTotal.push(annualSalary)
-    console.log(salaryTotal)
+    salaryTotal.push(annualSalary);
+    console.log(salaryTotal);
+    salaryCalc(salaryTotal);
+
+    // firstName.empty();
+    // lastName.empty();
+    // ID.empty();
+    // title.empty();
+    // annualSalary.empty();
 }
-// function to store salary and calc total cost
+
+// function to calc and total cost 
+function salaryCalc(array) {
+    let sum = 0;
+    for (let i = 0; i<array.length; i++){
+        sum += array[i]
+    }
+    console.log(sum)
+}
 // function to use deleteBtn to erase data
