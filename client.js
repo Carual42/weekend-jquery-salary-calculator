@@ -62,6 +62,10 @@ function salaryCalc(array) {
     Total Monthly: ${sum}
     </h3>
     `)
+    if (sum > 20000){
+        console.log('in if loop')
+        $('#monthCost').css('background-color', 'maroon')
+    }
 }
 // function to use deleteBtn to erase data
 function deleteEmployee() {
