@@ -4,6 +4,7 @@ $(readyNow);
 function readyNow() {
     console.log('ARE YOU READY?!?!?')
     $('#inputSubmit').on('click', storeData)
+    $('body').on('click', '#deleteBtn', deleteEmployee)
 }
 
 // array to hold salaries needed for calc total
@@ -51,8 +52,18 @@ function storeData() {
 function salaryCalc(array) {
     let sum = 0;
     for (let i = 0; i<array.length; i++){
-        sum += array[i]
+        sum += Number(array[i])
     }
     console.log(sum)
+    let monthlySum = $('#monthCost')
+    monthlySum.empty();
+    monthlySum.append (`
+    <h3>
+    Total Monthly: ${sum}
+    </h3>
+    `)
 }
 // function to use deleteBtn to erase data
+function deleteEmployee() {
+    $(this).parent().parent().remove();
+}
